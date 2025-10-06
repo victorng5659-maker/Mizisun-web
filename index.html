@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIZISUN ENTERPRISE 美之选门窗</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      background-color: #181818;
+      color: #fff;
+    }
+    header {
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px 12px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .logo img {
+      height: 55px;
+      margin-right: 12px;
+    }
+    .logo-title {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #fff;
+      line-height: 1.2;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #C3000B;
+    }
+    .hero-img {
+      width: 95%;
+      max-width: 1100px;
+      display: block;
+      margin: 35px auto 25px auto;
+      border-radius: 30px;
+      box-shadow: 0 4px 22px 0 rgba(0,0,0,0.12);
+      object-fit: cover;
+      height: 260px;
+      border: 3px solid #C3000B;
+    }
+    .main-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .profile-section {
+      display: flex;
+      gap: 30px;
+      margin-top: 35px;
+      margin-bottom: 30px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      background: #232323;
+      border-radius: 16px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.12);
+      padding: 40px 30px;
+    }
+    .profile-text {
+      flex: 1.1;
+      min-width: 250px;
+    }
+    .profile-images {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 200px;
+    }
+    .profile-images img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      border: 2px solid #C3000B;
+      background: #000;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #C3000B;
+      margin-bottom: 16px;
+      text-align: left;
+      letter-spacing: 1px;
+    }
+    .products-section {
+      margin-top: 25px;
+      margin-bottom: 50px;
+      background: #232323;
+      border-radius: 16px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.12);
+      padding: 40px 30px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 22px;
+    }
+    .product-card {
+      background: #181818;
+      border-radius: 14px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.10);
+      overflow: hidden;
+      text-align: center;
+      transition: box-shadow 0.15s;
+      padding-bottom: 10px;
+      border: 1px solid #333;
+    }
+    .product-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 14px 14px 0 0;
+      display: block;
+      border: 2px solid #C3000B;
+      background: #000;
+    }
+    .product-caption {
+      font-size: 15px;
+      color: #fff;
+      margin-top: 8px;
+      font-weight: 500;
+      padding: 0 6px;
+    }
+    .showcase-section {
+     background: #232323;
+     border-radius: 16px;
+     box-shadow: 0 0 18px rgba(0,0,0,0.12);
+     margin-top: 40px;
+     padding: 40px 30px;
+     max-width: 1100px;
+     margin-left: auto;
+     margin-right: auto;
+    }
+    .showcase-grid {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 20px;
+     justify-items: center;
+    }
+    .showcase-grid img {
+     width: 210px;
+     height: 150px;
+     object-fit: cover;
+     border-radius: 12px;
+     box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+     border: 2px solid #C3000B;
+     background: #000;
+    }
+    @media (max-width: 900px) {
+     .showcase-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+     .showcase-grid { grid-template-columns: 1fr; }
+    }   
+    .partners, .contact {
+      background-color: #232323;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 40px;
+      padding: 40px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-info {
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    footer {
+      background-color: #111;
+      color: #bbb;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 14px;
+      margin-top: 60px;
+      border-top: 3px solid #C3000B;
+    }
+    .social a {
+      margin: 0 10px;
+      color: #C3000B;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .social a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    @media (max-width: 800px) {
+      .profile-section {
+        flex-direction: column;
+        gap: 22px;
+        padding: 25px 8px;
+      }
+      .profile-images {
+        flex-direction: row;
+        gap: 12px;
+      }
+      .profile-images img {
+        max-width: 48%;
+      }
+      .hero-img {
+        height: 150px;
+      }
+    }
+    @media (max-width: 600px) {
+      .main-content, .partners, .contact {
+        padding: 0 6px;
+      }
+      .products-section {
+        padding: 0 2px;
+      }
+      nav a {
+        margin-left: 12px;
+      }
+      .profile-section {
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.jpg" alt="美之选门窗 Logo">
+    <div class="logo-title">MIZISUN ENTERPRISE<br><span style="font-size:16px;">美之选门窗</span></div>
+  </div>
+  <nav>
+    <a href="#about">关于我们</a>
+    <a href="#services">产品服务</a>
+    <a href="#showcase">产品展示</a>
+    <a href="#partners">合作伙伴</a>
+    <a href="#contact">联系我们</a>
+  </nav>
+</header>
+
+<img class="hero-img" src="banner.jpg" alt="Showroom Banner">
+
+<div class="main-content">
+
+  <div class="profile-section" id="about">
+    <div class="profile-text">
+      <div class="section-title">COMPANY PROFILE</div>
+      <div style="font-size:15px;line-height:1.7;">
+        Mizisun Doors and Windows, founded in 1998, is a modern home door and window enterprise that integrates design, R&D, manufacturing and sales, providing one-stop customized services. Our supply chain covers system windows, doors, entrance doors, shower rooms, and outdoor systems.
+        <br><br>
+        Headquartered in Foshan, Guangdong — the famous door and window manufacturing base, we have a 150,000 m² intelligent manufacturing base, with advanced automation, full welding, nano-coating and CNC technology. We focus on precision, efficiency, and stable delivery, committed to creating quiet, energy-saving, and beautiful homes.
+        <br><br>
+        In 2025, Mizisun officially entered the Malaysia market, with its first showroom in Johor Bahru. We look forward to creating quality homes for Malaysian families and partners.
+        <br><br>
+        美之选门窗（Mizisun Doors and Windows）成立于1998年，是一家集设计、研发、制造与销售为一体的现代化系统门窗企业，为客户提供一站式量身定制服务。我们拥有完整的垂直供应链，涵盖系统窗、系统门、入户门、淋浴房与户外系统等系列。
+        <br><br>
+        我们总部位于中国广东佛山——著名的门窗制造基地，拥有15万平方米智能制造基地，并引入先进自动化设备及全焊接系统、纳米喷涂工艺与CNC技术。我们以高精度、高效率与稳定交付为核心，致力于为全球家庭打造安静、节能与美观的居家体验。
+     </div>
+    </div>
+    <div class="profile-images">
+      <img src="profile1.jpg" alt="Showroom 1">
+      <img src="profile2.jpg" alt="Showroom 2">
+    </div>
+  </div>
+
+  <div class="products-section" id="services">
+    <div class="section-title">PRODUCTS & SERVICES</div>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="product1.jpg" alt="Sliding System">
+        <div class="product-caption">Sliding System</div>
+      </div>
+      <div class="product-card">
+        <img src="product2.jpg" alt="Folding System">
+        <div class="product-caption">Folding System</div>
+      </div>
+      <div class="product-card">
+        <img src="product3.jpg" alt="Window Systems">
+        <div class="product-caption">Window Systems</div>
+      </div>
+      <div class="product-card">
+        <img src="product4.jpg" alt="Door Systems">
+        <div class="product-caption">Door Systems</div>
+      </div>
+      <div class="product-card">
+        <img src="product5.jpg" alt="Entrance Door Systems">
+        <div class="product-caption">Entrance Door Systems</div>
+      </div>
+      <div class="product-card">
+        <img src="product6.jpg" alt="Swing Door Systems">
+        <div class="product-caption">Swing Door Systems</div>
+      </div>
+      <div class="product-card">
+        <img src="product7.jpg" alt="Outdoor Systems">
+        <div class="product-caption">Outdoor Systems</div>
+      </div>
+      <div class="product-card">
+        <img src="product8.jpg" alt="Custom Solutions">
+        <div class="product-caption">Custom Solutions</div>
+      </div>
+    </div>
+  </div>
+<section id="showcase" class="showcase-section">
+  <h2 class="section-title">产品展示 | Product Showcase</h2>
+  <div class="showcase-grid">
+    <img src="showcase1.jpg" alt="Showcase 1">
+    <img src="showcase2.jpg" alt="Showcase 2">
+    <img src="showcase3.jpg" alt="Showcase 3">
+    <img src="showcase4.jpg" alt="Showcase 4">
+    <img src="showcase5.jpg" alt="Showcase 5">
+    <img src="showcase6.jpg" alt="Showcase 6">
+    <img src="showcase7.jpg" alt="Showcase 7">
+    <img src="showcase8.jpg" alt="Showcase 8">
+  </div>
+</section>
+</div>
+
+<section id="partners" class="partners">
+  <h2 style="color:#C3000B;">合作伙伴 | Partner With Us</h2>
+  <p>
+    我们诚邀马来西亚各地经销商、建筑商及设计师合作，共同拓展高品质系统门窗市场。
+    <br>
+    We welcome distributors, builders, and designers in Malaysia to partner with us for long-term collaboration opportunities.
+  </p>
+</section>
+
+<section id="contact" class="contact">
+  <h2 style="color:#C3000B;">联系我们 | Contact Us</h2>
+  <div class="contact-info">
+    <p><strong>MIZISUN ENTERPRISE（美之选门窗）</strong></p>
+    <p>📍 18, Jalan Ekoperniagaan 3/5, Taman Ekoperniagaan, 81100 Johor Bahru, Johor, Malaysia</p>
+    <p>📞 电话 / WhatsApp: <a href="https://wa.me/60167427546" style="color:#C3000B;">+6016-7427546</a></p>
+    <p>📧 Email: mizisunent@gmail.com</p>
+    <p>🕓 营业时间: Mon - Sat | 9:00AM - 6:00PM</p>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.facebook.com/share/1D8dmFRbJ1/" target="_blank">Facebook</a> |
+    <a href="https://www.tiktok.com/@mxz3668" target="_blank">TikTok</a>
+  </div>
+  <p>© 2025 MIZISUN ENTERPRISE 美之选门窗 版权所有.</p>
+</footer>
+
+</body>
+</html>
